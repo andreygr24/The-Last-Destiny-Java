@@ -15,4 +15,6 @@ public class BootsLeather extends ItemWoW {
         this.attributes.add("Armor +250");
         this.attributes.add("Agility +300");
     }
+
+    public List<String > getAttributes() {return attributes;}
 }

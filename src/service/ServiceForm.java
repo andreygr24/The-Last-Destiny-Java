@@ -1,12 +1,13 @@
 package service;
 
-import model.Form;
+import model.Apply;
 
 public class ServiceForm {
-    public Form createForm (String name, String email, String country, int age){
+    public Apply createForm (String name, String email, String country, int age, String mainCharacter, String role, String spec,
+                             String tellMeAboutYourSelf){
 
         try {
-            return new Form(name, email, country, age);
+            return new Apply(name, email, country, age, mainCharacter,role,spec,tellMeAboutYourSelf );
         }catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
             return null;

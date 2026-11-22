@@ -46,7 +46,7 @@ public class Login {
          return false;
          }
      }
-     public int getMaxAttempts(){
+     public int getRemainingAttempts(){
 
          return maxAttempts - attempts;
     }

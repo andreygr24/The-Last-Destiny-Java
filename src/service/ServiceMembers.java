@@ -12,7 +12,7 @@ public class ServiceMembers {
 
         members.add(m);
     }
-       public void activeMembers(){
+       public void loadMembers(){
             members.add(new Members("Lucky mage","Mage", true, "Raider"));
             members.add(new Members("Marcux", "Warrior", true, "Core raider"));
             members.add(new Members("Arcinesa", "Priest", true, "Officer"));

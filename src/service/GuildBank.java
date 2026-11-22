@@ -1,49 +1,42 @@
 package service;
 
 import model.Sellable;
-import util.Currency;
-import util.Input;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
+
 
 public class GuildBank {
 
      private final List<Sellable> bank;
 
-     public GuildBank(){
+     public GuildBank() {
+
 
           this.bank = new ArrayList<>();
      }
 
-     int selectItem = -1;
-     int buyItem = -1;
-     int quantity = -1;
+     public void addItem(Sellable item) {
+          bank.add(item);
+     }
 
-public void showBank() {
+     public List<Sellable> getBank() {
+          return bank;
+     }
 
-     IntStream.range(0, bank.size())
-             .forEach(i -> System.out.println(i + " - " + bank.get(i).getName() + " - " + Currency.currency.format(bank.get(i).getPrice())));
-
-     do{
-          try {
-               System.out.println("Choose the item you want to buy: ");
-               selectItem = Integer.parseInt(Input.sc.nextLine());
-               if (selectItem < 0 || selectItem >= bank.size()) {
-                    System.out.println("Write correct number!");
-               }
-
-          }catch (Exception error){
-               System.out.println("Only number allowed");
-               selectItem = -1;
+     public Sellable getItem(int index) {
+          if (index < 0 || index >= bank.size()){
+          return null;
           }
-     }while (selectItem < 0 || selectItem >= bank.size());
+          return bank.get(index);
+     }
 
-
-
-
-
+     public int sellItem(int index, int quantity) {
+          Sellable item = getItem(index);
+          if (item == null){
+               return 0;
+          }
+          return item.getSell() * quantity;
      }
 
 }
