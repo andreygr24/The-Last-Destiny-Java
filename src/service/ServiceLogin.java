@@ -24,7 +24,7 @@ public ServiceLogin(){
    }
 
 public int getMaxAttempts (){
-     return login.getMaxAttempts();
+     return login.getRemainingAttempts();
 
     }
 

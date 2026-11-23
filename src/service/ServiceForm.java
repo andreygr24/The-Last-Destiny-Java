@@ -3,6 +3,7 @@ package service;
 import model.Apply;
 
 public class ServiceForm {
+
     public Apply createForm (String name, String email, String country, int age, String mainCharacter, String role, String spec,
                              String tellMeAboutYourSelf){
 
