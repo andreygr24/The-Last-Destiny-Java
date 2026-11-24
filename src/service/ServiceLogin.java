@@ -7,7 +7,7 @@ public class ServiceLogin {
 public ServiceLogin(){
 
      try {
-         this.login = new Login("Andrey", "240490");
+         this.login = new Login("Demo", "1234");
      } catch (IllegalArgumentException e){
          System.out.println("Wrong data!" + e.getMessage());
      }
